@@ -7,161 +7,202 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #ffffff;
-            --text: #0f172a;
+            --primary-green: #10b981; /* Yeşilyurt Yeşili */
+            --dark-navy: #0f172a;
+            --light-bg: #f8fafc;
+            --text-main: #1e293b;
             --text-muted: #64748b;
-            --accent: #2563eb;
-            --card: #f8fafc;
-            --border: #e2e8f0;
-            --nav-bg: rgba(255, 255, 255, 0.8);
         }
 
-        [data-theme="dark"] {
-            --bg: #0f172a;
-            --text: #f1f5f9;
-            --text-muted: #94a3b8;
-            --accent: #3b82f6;
-            --card: #1e293b;
-            --border: #334155;
-            --nav-bg: rgba(15, 23, 42, 0.8);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; transition: background 0.3s, color 0.3s; }
-        body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; line-height: 1.6; }
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
 
-        /* Dinamik Navigasyon */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigasyon Stili */
+        header {
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
         nav {
-            position: fixed; top: 0; width: 100%; padding: 15px 0;
-            background: var(--nav-bg); backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border); z-index: 1000;
-        }
-        .nav-container { max-width: 850px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
-        
-        .theme-toggle {
-            cursor: pointer; padding: 8px 15px; border-radius: 20px;
-            border: 1px solid var(--border); background: var(--card); color: var(--text);
-            font-size: 0.8rem; font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .container { max-width: 850px; margin: 0 auto; padding: 120px 20px 50px; }
-
-        /* Header Animasyonu */
-        header { margin-bottom: 60px; opacity: 0; transform: translateY(20px); animation: fadeInUp 0.8s forwards; }
-        .name { font-size: clamp(2rem, 8vw, 3.5rem); font-weight: 800; letter-spacing: -0.04em; margin-bottom: 10px; }
-        .accent-text { color: var(--accent); }
-
-        /* Kartlar ve Hover Efektleri */
-        section { margin-bottom: 60px; }
-        .section-title { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 30px; font-weight: 700; }
-        
-        .card {
-            background: var(--card); padding: 30px; border-radius: 16px; border: 1px solid var(--border);
-            transition: transform 0.3s, box-shadow 0.3s;
+        .logo a {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--dark-navy);
+            text-decoration: none;
+            letter-spacing: -1px;
         }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); }
 
-        .skill-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-        .skill-item { background: var(--bg); padding: 15px; border-radius: 10px; border: 1px solid var(--border); }
+        .logo span {
+            color: var(--primary-green);
+        }
 
-        .contact-links { display: flex; gap: 20px; margin-top: 25px; }
-        .contact-links a { color: var(--text); font-weight: 600; text-decoration: none; border-bottom: 2px solid var(--accent); font-size: 0.9rem; }
+        .menu ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
 
-        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+        .menu ul li a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
 
-        /* Scroll Reveal Efekti İçin Sınıf */
-        .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s all ease; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
+        .menu ul li a:hover {
+            color: var(--primary-green);
+        }
+
+        .menu-button {
+            background: var(--dark-navy);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 20px;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .menu-button:hover {
+            background: var(--primary-green);
+            transform: translateY(-2px);
+        }
+
+        /* Ana İçerik (Hero Section) */
+        .hero {
+            padding: 100px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            color: var(--dark-navy);
+            line-height: 1.1;
+            margin-bottom: 25px;
+            max-width: 800px;
+        }
+
+        .hero h1 span {
+            color: var(--primary-green);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin-bottom: 40px;
+        }
+
+        .links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-primary {
+            background: var(--primary-green);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            box-shadow: 0 10px 20px -5px rgba(16, 185, 129, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--dark-navy);
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px -5px rgba(16, 185, 129, 0.5);
+        }
+
+        .btn-secondary:hover {
+            background: #f1f5f9;
+            border-color: var(--primary-green);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .menu { display: none; } /* Mobilde basitlik için menüyü gizledim */
+            .hero padding: 60px 0;
+        }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="nav-container">
-            <span style="font-weight: 800; letter-spacing: -1px;">MSY.</span>
-            <button class="theme-toggle" onclick="toggleTheme()">Modu Değiştir</button>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="#">MS<span>Y</span>.</a>
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="#hakkimda">Hakkımda</a></li>
+                        <li><a href="#deneyim">Deneyim</a></li>
+                        <li><a href="#iletisim">İletişim</a></li>
+                    </ul>
+                    <a href="https://linkedin.com" target="_blank" class="menu-button">LinkedIn</a>
+                </div>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <div class="container">
-        <header>
-            <h1 class="name">Mehmet Sinan <span class="accent-text">Yeşilyurt</span></h1>
-            <p style="font-size: 1.2rem; color: var(--text-muted); max-width: 600px;">
-                VakıfBank Sistem Operasyonları Stajyeri. - Yönetim Bilişim Sistemleri Öğrencisi.
-            </p>
-            <div class="contact-links">
-                <a href="mailto:mehmetsinanyesilyurt@gmail.com">E-posta</a>
-                <a href="https://linkedin.com/in/mehmet-sinan-yeşilyurt-8971b821a">LinkedIn</a>
-                <a href="https://github.com/mehmetsinanyesilyurt">GitHub</a>
-            </div>
-        </header>
-
-        <section class="reveal">
-            <h2 class="section-title">Deneyim</h2>
-            <div class="card">
-                <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-                    <h3 style="font-weight: 700;">VakıfBank Genel Müdürlüğü</h3>
-                    <span style="font-size: 0.8rem; color: var(--accent); font-weight: 600;">ŞUBAT 2026 - GÜNÜMÜZ</span>
-                </div>
-                <p style="color: var(--text-muted); font-size: 0.95rem;">
-                    Sistem Operasyonları Müdürlüğü bünyesinde, kurumsal bankacılık sistemlerinin izlenmesi ve operasyonel süreçlerin otomasyonu konularında pratik yetkinlik kazanıyorum.
-                </p>
+    <main class="container">
+        <section class="hero">
+            <h1>Sistem operasyonlarını daha <span>verimli</span> hale getiriyoruz.</h1>
+            <p>VakıfBank bünyesinde kurumsal sistemlerin sürdürülebilirliği üzerine çalışıyor, geleceğin güvenli teknoloji altyapılarını kurguluyorum.</p>
+            <div class="links">
+                <a href="mailto:mehmetsinanyesilyurt@gmail.com" class="btn-primary">İletişime Geç</a>
+                <a href="#projeler" class="btn-secondary">Çalışmalarımı Gör</a>
             </div>
         </section>
+    </main>
 
-        <section class="reveal">
-            <h2 class="section-title">Teknik Cephanelik</h2>
-            <div class="skill-grid">
-                <div class="skill-item">
-                    <h4 style="margin-bottom: 10px; font-size: 0.9rem;">Veritabanı</h4>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">MySQL, MS SQL Server</p>
-                </div>
-                <div class="skill-item">
-                    <h4 style="margin-bottom: 10px; font-size: 0.9rem;">Programlama</h4>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Python, C#, .NET</p>
-                </div>
-                <div class="skill-item">
-                    <h4 style="margin-bottom: 10px; font-size: 0.9rem;">Altyapı</h4>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Git, Sistem İzleme, Operasyon</p>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <script>
-        // Karanlık Mod Fonksiyonu
-        function toggleTheme() {
-            const body = document.body;
-            const currentTheme = body.getAttribute('data-theme');
-            if (currentTheme === 'dark') {
-                body.removeAttribute('data-theme');
-                localStorage.setItem('theme', 'light');
-            } else {
-                body.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
-            }
-        }
-
-        // Kaydırma Efekti (Scroll Reveal)
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 150;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                }
-            }
-        }
-
-        window.addEventListener("scroll", reveal);
-
-        // Sayfa yüklendiğinde tercih edilen temayı hatırla
-        window.onload = () => {
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'dark') document.body.setAttribute('data-theme', 'dark');
-            reveal(); // İlk açılışta görünür olanları yükle
-        };
-    </script>
 </body>
 </html>
