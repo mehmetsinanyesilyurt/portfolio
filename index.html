@@ -10,35 +10,39 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth; /* Sayfa içi geçişleri yumuşatır */
         }
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background: url("bg.jpg"); /* Sadece görsel */
-    background-size: cover;    /* Görseli ekrana tam yayar */
-    background-position: center; /* Görseli ortalar */
-    background-attachment: fixed; /* Sayfa kaysa bile görsel sabit kalır */
-    color: white;
-    height: 100vh;
-    margin: 0;
-}
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("bg.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            margin: 0;
+        }
         .container {
             width: 85%;
             margin: auto;
         }
-
         header {
             height: 100px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
         }
-
         header nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             height: 100%;
+            max-width: 85%;
+            margin: auto;
         }
-
         .logo a {
             color: white;
             text-decoration: none;
@@ -46,30 +50,25 @@ body {
             font-size: 22px;
             letter-spacing: 2px;
         }
-
         nav .menu {
             display: flex;
             align-items: center;
             column-gap: 40px;
         }
-
         nav ul {
             list-style: none;
             display: flex;
             column-gap: 30px;
         }
-
         nav ul li a {
             color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
             font-size: 14px;
             transition: 0.3s;
         }
-
         nav ul li a:hover {
             color: #0ba2c0;
         }
-
         .menu-button {
             color: #0ba2c0;
             text-decoration: none;
@@ -80,71 +79,77 @@ body {
             transition: all 0.3s ease;
             font-size: 14px;
         }
-
         .menu-button:hover {
             background-color: #0ba2c0;
             color: white;
             transform: translateY(-2px);
         }
 
-        /* Ana İçerik */
+        /* Ana İçerik ve Hakkımda */
         .content {
-            height: calc(100vh - 100px);
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
+            padding-top: 100px;
+        }
+
+        /* Fotoğraf Ayarı */
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 4px solid #0ba2c0;
+            margin-bottom: 25px;
+            object-fit: cover;
+            box-shadow: 0 0 20px rgba(11, 162, 192, 0.3);
         }
 
         .content h1 {
-            font-size: 72px;
+            font-size: 56px;
             font-weight: 700;
-            letter-spacing: -2px;
-            margin-bottom: 20px;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
         }
-
         .content .highlight {
             color: #0ba2c0;
         }
-
         .content p {
-            font-size: 20px;
+            font-size: 22px;
             max-width: 750px;
             line-height: 1.6;
-            color: rgba(255, 255, 255, 0.8);
-            font-weight: 300;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 400;
+            margin-top: 10px;
+        }
+        
+        .section-container {
+            padding: 100px 0;
+            text-align: center;
         }
 
-        .content .links {
+        .links {
             display: flex;
-            margin-top: 50px;
+            margin-top: 40px;
             column-gap: 20px;
         }
-
-        .content .links a {
-            padding: 18px 45px;
+        .links a {
+            padding: 15px 35px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             font-size: 15px;
             transition: all 0.3s;
         }
-
-        .btn-primary {
-            background-color: white;
-            color: black;
-        }
-
         .btn-secondary {
             background-color: transparent;
             color: white;
             border: 2px solid rgba(255, 255, 255, 0.2);
         }
-
-        .content .links a:hover {
+        .links a:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(11, 162, 192, 0.2);
             background-color: #0ba2c0;
             color: white;
             border-color: #0ba2c0;
@@ -152,39 +157,52 @@ body {
 
         /* Mobil Ayarlar */
         @media(max-width: 768px) {
-            .content h1 { font-size: 42px; }
-            .content p { font-size: 16px; }
+            .content h1 { font-size: 36px; }
+            .content p { font-size: 18px; }
             nav ul { display: none; }
-            .content .links { flex-direction: column; row-gap: 15px; width: 100%; }
-            .content .links a { width: 100%; }
+            .profile-img { width: 150px; height: 150px; }
         }
     </style>
 </head>
 <body>
 
-    <header class="container">
+    <header>
         <nav>
             <div class="logo">
                 <a href="#">MSY<span>.</span></a>
             </div>
             <div class="menu">
                 <ul>
-                    <li><a href="#">Hakkımda</a></li>
-                    <li><a href="#">Yetenekler</a></li>
-                    <li><a href="#">Deneyim</a></li>
+                    <li><a href="#hakkimda">Hakkımda</a></li>
+                    <li><a href="#yetenekler">Yetenekler</a></li>
+                    <li><a href="#deneyim">Deneyim</a></li>
                 </ul>
                 <a href="mailto:mehmetsinanyesilyurt@gmail.com" class="menu-button">Bana Ulaş</a>
             </div>
         </nav>
     </header>
 
-    <main class="container content">
-        <h1>Mehmet Sinan Yeşilyurt<span class="highlight"></span></h1>
- 
-        
-        <div class="links">
-            <a href="#" class="btn-secondary">GitHub Profilim</a>
-        </div>
+    <main class="container">
+        <section id="hakkimda" class="content">
+            <img src="me.jpg" alt="Mehmet Sinan Yeşilyurt" class="profile-img">
+            <h1>Mehmet Sinan Yeşilyurt</h1>
+            <p>Merhaba, ben <span class="highlight">Mehmet Sinan Yeşilyurt</span>.</p>
+            <p style="font-size: 16px; color: rgba(255,255,255,0.7);">Akdeniz Üniversitesi YBS öğrencisi & VakıfBank Stajyeri</p>
+            
+            <div class="links">
+                <a href="https://github.com/mehmetsinanyesilyurt" target="_blank" class="btn-secondary">GitHub Profilim</a>
+            </div>
+        </section>
+
+        <section id="yetenekler" class="section-container">
+            <h2 class="highlight">Yetenekler</h2>
+            <p>SQL, Python, HTML, CSS</p>
+        </section>
+
+        <section id="deneyim" class="section-container">
+            <h2 class="highlight">Deneyim</h2>
+            <p>VakıfBank - Sistem Operasyonları Stajyeri</p>
+        </section>
     </main>
 
 </body>
