@@ -1,206 +1,204 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MSY | Creative System Engineer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mehmet Sinan Yeşilyurt | Portfolyo</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;500;900&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <style>
-        :root {
-            --bg: #0a0a0a;
-            --text: #ffffff;
-            --accent: #00ff88; /* Matrix-like accent */
-            --gray: #888888;
-        }
+    <style>
+        :root {
+            --primary: #00d2ff; /* Modern Cyan */
+            --secondary: #3a7bd5; /* Deep Blue */
+            --linkedin: #0077b5;
+            --bg-dark: #050505;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --text-main: #ffffff;
+            --text-dim: rgba(255, 255, 255, 0.6);
+        }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; cursor: none !important; }
-        
-        body { 
-            background-color: var(--bg); 
-            color: var(--text); 
-            font-family: 'Inter', sans-serif; 
-            overflow-x: hidden;
-            background-image: radial-gradient(circle at 50% 50%, #151515 0%, #0a0a0a 100%);
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; scroll-behavior: smooth; }
 
-        /* Grainy Noise Effect */
-        body::after {
-            content: "";
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background-image: url('https://grainy-gradients.vercel.app/noise.svg');
-            opacity: 0.05; pointer-events: none; z-index: 9999;
-        }
+        body { background-color: var(--bg-dark); color: var(--text-main); overflow-x: hidden; line-height: 1.6; }
 
-        /* Custom Cursor */
-        #cursor {
-            position: fixed; width: 20px; height: 20px; background: var(--accent);
-            border-radius: 50%; pointer-events: none; z-index: 10000;
-            mix-blend-mode: difference; transition: transform 0.15s ease-out;
-        }
+        #particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; background: #050505; }
 
-        #cursor-outline {
-            position: fixed; width: 40px; height: 40px; border: 1px solid var(--accent);
-            border-radius: 50%; pointer-events: none; z-index: 9999;
-            transition: transform 0.25s ease-out;
-        }
+        /* Navigation */
+        header {
+            position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+            width: 90%; max-width: 1100px; padding: 12px 30px;
+            background: rgba(10, 10, 10, 0.8); backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border); border-radius: 100px;
+            z-index: 1000; display: flex; justify-content: space-between; align-items: center;
+        }
 
-        /* Navbar */
-        header {
-            position: fixed; top: 0; width: 100%; padding: 40px 6%;
-            display: flex; justify-content: space-between; align-items: center; z-index: 1000;
-        }
+        .logo { font-weight: 800; font-size: 1.4rem; color: var(--primary); text-decoration: none; letter-spacing: 1px; }
 
-        .logo { font-weight: 900; font-size: 1.5rem; letter-spacing: -2px; }
-        .nav-links { display: flex; gap: 40px; }
-        .nav-links a { color: var(--text); text-decoration: none; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; opacity: 0.5; transition: 0.4s; }
-        .nav-links a:hover { opacity: 1; color: var(--accent); }
+        nav ul { display: flex; list-style: none; gap: 25px; }
+        nav ul a { color: var(--text-dim); text-decoration: none; font-weight: 500; transition: 0.3s; font-size: 0.85rem; }
+        nav ul a:hover { color: var(--primary); }
 
-        /* Hero Section */
-        .hero {
-            height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 0 10%;
-        }
+        /* Hero Section */
+        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .profile-container { position: relative; margin-bottom: 25px; }
+        .profile-img { width: 190px; height: 190px; border-radius: 50%; border: 2px solid var(--primary); padding: 5px; transition: 0.5s; object-fit: cover; }
+        
+        h1 { font-size: clamp(2.5rem, 8vw, 4.2rem); font-weight: 800; line-height: 1.1; margin-bottom: 10px; }
+        .gradient-text { background: linear-gradient(45deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-        .hero h1 {
-            font-size: clamp(4rem, 15vw, 12rem); font-weight: 900; line-height: 0.8;
-            letter-spacing: -6px; text-transform: uppercase;
-        }
+        .btn-group { display: flex; gap: 15px; margin-top: 35px; flex-wrap: wrap; justify-content: center; }
+        .btn { padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: 0.4s; display: flex; align-items: center; gap: 10px; font-size: 0.9rem; }
+        .btn-primary { background: var(--primary); color: #000; }
+        .btn-primary:hover { background: #fff; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0, 210, 255, 0.2); }
+        .btn-outline { border: 1px solid var(--glass-border); color: #fff; }
+        .btn-outline:hover { border-color: var(--primary); background: var(--glass); transform: translateY(-3px); }
 
-        .hero h1 span { display: block; overflow: hidden; }
-        .hero h1 span i { display: block; transform: translateY(100%); transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1); }
+        /* Sections */
+        section { padding: 100px 5%; max-width: 1100px; margin: auto; }
+        .section-title { font-size: 2.2rem; margin-bottom: 50px; text-align: center; font-weight: 700; }
 
-        .sub-hero {
-            display: flex; justify-content: space-between; align-items: flex-start; margin-top: 40px;
-        }
+        /* Event Card - Refined */
+        .event-card {
+            background: var(--glass); border: 1px solid var(--glass-border);
+            border-radius: 24px; display: grid; grid-template-columns: 1fr 1.2fr;
+            overflow: hidden; transition: 0.4s;
+        }
+        .event-img { width: 100%; height: 100%; object-fit: cover; max-height: 400px; filter: grayscale(20%); transition: 0.5s; }
+        .event-card:hover .event-img { filter: grayscale(0%); }
+        .event-content { padding: 40px; border-left: 1px solid var(--glass-border); }
+        .event-tag { color: var(--primary); border: 1px solid var(--primary); padding: 4px 12px; border-radius: 10px; font-size: 0.7rem; font-weight: 600; margin-bottom: 15px; display: inline-block; text-transform: uppercase; }
 
-        .hero-italic { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400; color: var(--accent); font-size: 2rem; }
+        /* Cards */
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { background: var(--glass); border: 1px solid var(--glass-border); padding: 35px; border-radius: 20px; transition: 0.3s; }
+        .card:hover { border-color: var(--primary); transform: translateY(-5px); }
+        .card i { font-size: 2rem; color: var(--primary); margin-bottom: 20px; display: block; }
 
-        /* Project Cards */
-        section { padding: 150px 10%; }
-        .section-header { display: flex; justify-content: space-between; margin-bottom: 80px; border-bottom: 1px solid #333; padding-bottom: 20px; }
+        footer { padding: 60px 20px; text-align: center; border-top: 1px solid var(--glass-border); color: var(--text-dim); font-size: 0.9rem; }
 
-        .project-card {
-            position: relative; margin-bottom: 150px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: center;
-        }
-
-        .project-img {
-            position: relative; overflow: hidden; border-radius: 10px; height: 600px;
-        }
-
-        .project-img img { width: 100%; height: 100%; object-fit: cover; transition: 1.2s cubic-bezier(0.19, 1, 0.22, 1); filter: saturate(0); }
-        .project-card:hover .project-img img { transform: scale(1.1); filter: saturate(1); }
-
-        .project-info h2 { font-size: 4rem; font-weight: 100; margin-bottom: 20px; }
-        .project-info p { color: var(--gray); font-size: 1.2rem; max-width: 400px; line-height: 1.8; }
-
-        /* Footer */
-        footer { padding: 100px 10%; text-align: center; background: #000; }
-        .footer-cta { font-size: 8vw; font-weight: 900; letter-spacing: -5px; transition: 0.4s; }
-        .footer-cta:hover { color: var(--accent); }
-
-        @media (max-width: 900px) {
-            .project-card { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 5rem; letter-spacing: -2px; }
-            .nav-links { display: none; }
-        }
-    </style>
+        @media (max-width: 850px) {
+            .event-card { grid-template-columns: 1fr; }
+            .event-content { border-left: none; border-top: 1px solid var(--glass-border); }
+            header { width: 95%; }
+            nav ul { display: none; }
+        }
+    </style>
 </head>
 <body>
 
-<div id="cursor"></div>
-<div id="cursor-outline"></div>
+<div id="particles-js"></div>
 
 <header>
-    <div class="logo">MSY©</div>
-    <nav class="nav-links">
-        <a href="#work">Index</a>
-        <a href="#about">Philosophy</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    <a href="#" class="logo">MSY.</a>
+    <nav>
+        <ul>
+            <li><a href="#hakkimda">Giriş</a></li>
+            <li><a href="#yetenekler">Teknik</a></li>
+            <li><a href="#etkinlik">Etkinlikler</a></li>
+            <li><a href="#deneyim">Kariyer</a></li>
+        </ul>
+    </nav>
+    <div style="display: flex; gap: 15px; align-items: center;">
+        <a href="https://www.linkedin.com/in/mehmet-sinan-ye%C5%9Filyurt-8971b821a/" target="_blank" style="color: var(--linkedin); font-size: 1.3rem;"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:mehmetsinanyesilyurt@gmail.com" class="btn btn-primary" style="padding: 8px 18px; font-size: 0.75rem;">İletişim</a>
+    </div>
 </header>
 
 <main>
-    <section class="hero">
-        <h1 id="hero-title">
-            <span><i>ENGINEERING</i></span>
-            <span><i>THE FUTURE</i></span>
-        </h1>
-        <div class="sub-hero">
-            <div class="hero-italic" data-aos="fade-right">Creative Mind</div>
-            <div style="max-width: 300px; text-align: right;" data-aos="fade-left">
-                <p style="opacity: 0.5; font-size: 0.9rem;">VakıfBank Systems Dept. Intern<br>Based in Antalya, Turkey</p>
-            </div>
-        </div>
-    </section>
+    <section id="hakkimda" class="hero">
+        <div class="profile-container" data-aos="zoom-in">
+            <img src="1763670904995 (1).jpeg" alt="Mehmet Sinan" class="profile-img">
+        </div>
+        <h1 data-aos="fade-up">Mehmet Sinan <br><span class="gradient-text">Yeşilyurt</span></h1>
+        <p style="color: var(--text-dim); margin-top: 10px; font-size: 1.1rem;" data-aos="fade-up">
+            Akdeniz Üniversitesi YBS Öğrencisi & Stajyer
+        </p>
+        <div class="btn-group" data-aos="fade-up" data-aos-delay="200">
+            <a href="https://github.com/mehmetsinanyesilyurt" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://www.linkedin.com/in/mehmet-sinan-ye%C5%9Filyurt-8971b821a/" target="_blank" class="btn btn-outline"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="#etkinlik" class="btn btn-primary">Projelerimi Gör</a>
+        </div>
+    </section>
 
-    <section id="work">
-        <div class="section-header">
-            <span>SELECTED WORKS (2024-2026)</span>
-            <span>SCROLL TO EXPLORE</span>
-        </div>
+    <section id="yetenekler">
+        <h2 class="section-title" data-aos="fade-up">Teknik Yetkinlikler</h2>
+        <div class="card-grid">
+            <div class="card" data-aos="fade-up">
+                <i class="fas fa-database"></i>
+                <h3 style="margin-bottom: 10px;">Veritabanı Yönetimi</h3>
+                <p style="color: var(--text-dim); font-size: 0.95rem;">PostgreSQL ve MySQL sistemlerinde veri modelleme, yönetim ve optimizasyon süreçleri.</p>
+            </div>
+            <div class="card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-code"></i>
+                <h3 style="margin-bottom: 10px;">Yazılım Geliştirme</h3>
+                <p style="color: var(--text-dim); font-size: 0.95rem;">Python ile otomasyon scriptleri ve veri işleme. Modern Web teknolojileri (HTML, CSS, React).</p>
+            </div>
+            <div class="card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-terminal"></i>
+                <h3 style="margin-bottom: 10px;">Sistem Operasyonları</h3>
+                <p style="color: var(--text-dim); font-size: 0.95rem;">Altyapı izleme, sunucu yönetimi ve kurumsal sistem süreçlerinin takibi.</p>
+            </div>
+        </div>
+    </section>
 
-        <div class="project-card" data-aos="fade-up">
-            <div class="project-img">
-                <img src="k.jpeg" alt="Robotics">
-            </div>
-            <div class="project-info">
-                <h2>Robotic <br>Systems</h2>
-                <p>Dijital çağın gereksinimlerine göre şekillenen robotik altyapı ve farkındalık projeleri.</p>
-                <a href="#" style="color: var(--accent); text-decoration: none; margin-top: 30px; display: inline-block;">View Detail ↗</a>
-            </div>
-        </div>
+    <section id="etkinlik">
+        <h2 class="section-title" data-aos="fade-up">Sosyal Sorumluluk & Eğitim</h2>
+        <div class="event-card" data-aos="fade-up">
+            <img src="k.jpeg" alt="Eğitim Etkinliği" class="event-img">
+            <div class="event-content">
+                <h3 style="font-size: 1.6rem; margin-bottom: 15px;">Dijital Çağda Robotlar ve Getirdikleri</h3>
+                <p style="color: var(--text-dim); font-size: 0.95rem; margin-bottom: 20px;">
+                    Akdeniz Üniversitesi Tazelenme Üniversitesi öğrencilerine yönelik robotik teknolojiler üzerine verdiğimiz bu eğitimle, dijital dünyanın fırsatlarını her yaştan katılımcıyla paylaştık.
+                </p>
+                <div style="font-size: 0.85rem; color: var(--primary); font-weight: 600;">
+                    #AkdenizÜniversitesi #DijitalFarkındalık #Robotik
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <div class="project-card" data-aos="fade-up" style="direction: rtl;">
-            <div class="project-img">
-                <img src="1763670904995 (1).jpeg" alt="Database">
-            </div>
-            <div class="project-info" style="direction: ltr;">
-                <h2>Core <br>Operations</h2>
-                <p>VakıfBank Sistem Operasyonları Müdürlüğü bünyesinde yürütülen kurumsal altyapı çalışmaları.</p>
-                <a href="#" style="color: var(--accent); text-decoration: none; margin-top: 30px; display: inline-block;">View Detail ↗</a>
-            </div>
-        </div>
-    </section>
+    <section id="deneyim">
+        <h2 class="section-title" data-aos="fade-up">Kariyer</h2>
+        <div class="card" style="display: flex; justify-content: space-between; align-items: center; border-left: 4px solid var(--primary);" data-aos="fade-left">
+            <div>
+                <h3 style="color: var(--primary);">VakıfBank</h3>
+                <p><b>Sistem Operasyonları Müdürlüğü — Stajyer</b></p>
+                <p style="font-size: 0.85rem; opacity: 0.6; margin-top: 5px;">Şubat 2026 – Günümüz</p>
+            </div>
+            <i class="fas fa-building" style="font-size: 2.5rem; opacity: 0.1;"></i>
+        </div>
+    </section>
 </main>
 
 <footer>
-    <a href="mailto:mehmetsinanyesilyurt@gmail.com" class="footer-cta" style="text-decoration: none; color: white;">LET'S TALK</a>
-    <p style="margin-top: 50px; opacity: 0.3;">© 2026 MEHMET SINAN YESILYURT. ALL RIGHTS RESERVED.</p>
+    <p>Mehmet Sinan Yeşilyurt &copy; 2026</p>
+    <div style="margin-top: 15px; display: flex; justify-content: center; gap: 20px; font-size: 1.1rem;">
+        <a href="https://github.com/mehmetsinanyesilyurt" target="_blank" style="color: #fff;"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/mehmet-sinan-ye%C5%9Filyurt-8971b821a/" target="_blank" style="color: var(--linkedin);"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:mehmetsinanyesilyurt@gmail.com" style="color: var(--primary);"><i class="fas fa-envelope"></i></a>
+    </div>
 </footer>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
-    AOS.init({ duration: 1200, once: false });
-
-    // Smooth Scroll
-    const lenis = new Lenis();
-    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
-    requestAnimationFrame(raf);
-
-    // Custom Cursor Logic
-    const cursor = document.querySelector('#cursor');
-    const outline = document.querySelector('#cursor-outline');
-    window.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
-        outline.style.left = e.clientX - 10 + 'px';
-        outline.style.top = e.clientY - 10 + 'px';
-    });
-
-    // Hero Animation Trigger
-    window.onload = () => {
-        document.querySelectorAll('#hero-title span i').forEach((el, index) => {
-            setTimeout(() => {
-                el.style.transform = 'translateY(0)';
-            }, 200 * index);
-        });
-    };
+    AOS.init({ duration: 1000, once: true });
+    particlesJS("particles-js", {
+        "particles": {
+            "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+            "color": { "value": "#00d2ff" },
+            "opacity": { "value": 0.2 },
+            "size": { "value": 2 },
+            "line_linked": { "enable": true, "distance": 150, "color": "#3a7bd5", "opacity": 0.1 },
+            "move": { "enable": true, "speed": 1.5 }
+        },
+        "interactivity": { "events": { "onhover": { "enable": true, "mode": "grab" } } }
+    });
 </script>
 
 </body>
-</html>
+</html> bu
