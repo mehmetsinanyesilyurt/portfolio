@@ -100,6 +100,17 @@ h1{font-size:clamp(2.8rem,7vw,4.5rem);font-weight:800;}
 .card:hover{transform:translateY(-8px);border-color:var(--primary);}
 .card i{font-size:2rem;color:var(--primary);margin-bottom:20px;}
 
+/* PROJECT TAGS */
+.tag-container{display:flex;gap:8px;margin:15px 0;flex-wrap:wrap;}
+.tag{
+    background:rgba(0,210,255,0.1);
+    color:var(--primary);
+    padding:4px 12px;
+    border-radius:20px;
+    font-size:0.75rem;
+    border:1px solid rgba(0,210,255,0.2);
+}
+
 /* EVENT */
 .event-card{
     display:grid;grid-template-columns:1fr 1.2fr;
@@ -158,6 +169,7 @@ footer{text-align:center;padding:80px 20px;border-top:1px solid var(--glass-bord
 <ul>
 <li><a href="#hakkimda">Giriş</a></li>
 <li><a href="#yetenekler">Teknik</a></li>
+<li><a href="#projeler">Projeler</a></li>
 <li><a href="#etkinlik">Etkinlik</a></li>
 <li><a href="#deneyim">Kariyer</a></li>
 </ul>
@@ -165,7 +177,6 @@ footer{text-align:center;padding:80px 20px;border-top:1px solid var(--glass-bord
 <a href="mailto:mehmetsinanyesilyurt@gmail.com" class="btn btn-primary" style="padding:8px 18px;font-size:.75rem;">Bana Ulaş</a>
 </header>
 
-<!-- HERO -->
 <section id="hakkimda" class="hero">
 <img src="profile.png" class="profile-img" data-aos="zoom-in">
 <h1 data-aos="fade-up">Mehmet Sinan <span class="gradient-text">Yeşilyurt</span></h1>
@@ -180,20 +191,39 @@ Akdeniz Üniversitesi Yönetim Bilişim Sistemleri Öğrencisi <br>
 </div>
 </section>
 
-<!-- SKILLS -->
 <section id="yetenekler">
 <h2 class="section-title">Teknik Yetkinlikler</h2>
 <div class="card-grid">
-<div class="card"><i class="fas fa-database"></i><h3>Veritabanı Yönetimi</h3><p>PostgreSQL, MySQL veri modelleme ve optimizasyon.</p></div>
-<div class="card"><i class="fas fa-terminal"></i><h3>Sistem Operasyonları</h3><p>Kurumsal altyapı izleme, sunucu yönetimi ve otomasyon.</p></div>
-<div class="card"><i class="fas fa-code"></i><h3>Yazılım Geliştirme</h3><p>Python, HTML, CSS ve modern frontend UI pratikleri.</p></div>
+<div class="card" data-aos="fade-up"><i class="fas fa-database"></i><h3>Veritabanı Yönetimi</h3><p>PostgreSQL, MySQL veri modelleme ve optimizasyon.</p></div>
+<div class="card" data-aos="fade-up" data-aos-delay="100"><i class="fas fa-terminal"></i><h3>Sistem Operasyonları</h3><p>Kurumsal altyapı izleme, sunucu yönetimi ve otomasyon.</p></div>
+<div class="card" data-aos="fade-up" data-aos-delay="200"><i class="fas fa-code"></i><h3>Yazılım Geliştirme</h3><p>Python, HTML, CSS ve modern frontend UI pratikleri.</p></div>
 </div>
 </section>
 
-<!-- EVENT -->
+<section id="projeler">
+<h2 class="section-title">Öne Çıkan Projeler</h2>
+<div class="card-grid">
+    <div class="card" data-aos="fade-up">
+        <i class="fas fa-calendar-check"></i>
+        <h3>Student Schedule Generator</h3>
+        <p style="color:var(--text-dim); font-size:0.95rem;">
+            Öğrenciler için geliştirilmiş, ders çakışmalarını tespit eden ve optimize edilmiş haftalık ders programı oluşturan C# tabanlı masaüstü uygulaması.
+        </p>
+        <div class="tag-container">
+            <span class="tag">C# / .NET</span>
+            <span class="tag">SQL Server</span>
+            <span class="tag">Conflict Detection</span>
+        </div>
+        <a href="https://github.com/mehmetsinanyesilyurt/student-schedule-generator" target="_blank" class="btn btn-outline" style="margin-top:20px; padding:10px 20px; font-size:0.8rem;">
+            <i class="fab fa-github"></i> Kaynak Kodu
+        </a>
+    </div>
+    </div>
+</section>
+
 <section id="etkinlik">
 <h2 class="section-title">Eğitim & Sosyal Sorumluluk</h2>
-<div class="event-card">
+<div class="event-card" data-aos="fade-up">
 <img src="k.jpeg" class="event-img">
 <div class="event-content">
 <h3 style="color:var(--primary);font-size:1.8rem;">Dijital Çağda Robotlar</h3>
@@ -204,11 +234,10 @@ Akdeniz Üniversitesi Tazelenme Üniversitesi kapsamında ileri yaş bireyler i�
 </div>
 </section>
 
-<!-- EXPERIENCE -->
 <section id="deneyim">
 <h2 class="section-title">Kariyer</h2>
 
-<div class="experience-box">
+<div class="experience-box" data-aos="fade-up">
 <div>
 <h3 style="color:var(--primary);font-size:1.6rem;">VakıfBank</h3>
 <p><b>Systems Operations Intern</b></p>
@@ -226,7 +255,6 @@ Akdeniz Üniversitesi Tazelenme Üniversitesi kapsamında ileri yaş bireyler i�
 <p>Mehmet Sinan Yeşilyurt © 2026</p>
 </footer>
 
-<!-- SCRIPTS -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
 <script>
