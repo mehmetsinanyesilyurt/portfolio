@@ -1,204 +1,335 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mehmet Sinan Yeşilyurt | Portfolyo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mehmet Sinan Yeşilyurt | Portfolyo</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Google Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <style>
-        :root {
-            --primary: #00d2ff; /* Modern Cyan */
-            --secondary: #3a7bd5; /* Deep Blue */
-            --linkedin: #0077b5;
-            --bg-dark: #050505;
-            --glass: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --text-main: #ffffff;
-            --text-dim: rgba(255, 255, 255, 0.6);
-        }
+    <style>
+        :root {
+            --primary: #00d2ff; /* Modern Cyan */
+            --secondary: #3a7bd5; /* Deep Blue */
+            --linkedin: #0077b5;
+            --bg-dark: #050505;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --text-main: #ffffff;
+            --text-dim: rgba(255, 255, 255, 0.6);
+        }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; scroll-behavior: smooth; }
 
-        body { background-color: var(--bg-dark); color: var(--text-main); overflow-x: hidden; line-height: 1.6; }
+        body { 
+            background-color: var(--bg-dark); 
+            color: var(--text-main); 
+            overflow-x: hidden; 
+            line-height: 1.6;
+        }
 
-        #particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; background: #050505; }
+        /* Particles Background */
+        #particles-js { 
+            position: fixed; 
+            width: 100%; 
+            height: 100%; 
+            z-index: -1; 
+            background: #050505; 
+        }
 
-        /* Navigation */
-        header {
-            position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
-            width: 90%; max-width: 1100px; padding: 12px 30px;
-            background: rgba(10, 10, 10, 0.8); backdrop-filter: blur(15px);
-            border: 1px solid var(--glass-border); border-radius: 100px;
-            z-index: 1000; display: flex; justify-content: space-between; align-items: center;
-        }
+        /* Glass Navigation */
+        header {
+            position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+            width: 90%; max-width: 1100px; padding: 12px 30px;
+            background: rgba(10, 10, 10, 0.85); backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border); border-radius: 100px;
+            z-index: 1000; display: flex; justify-content: space-between; align-items: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
 
-        .logo { font-weight: 800; font-size: 1.4rem; color: var(--primary); text-decoration: none; letter-spacing: 1px; }
+        .logo { 
+            font-weight: 800; 
+            font-size: 1.4rem; 
+            color: var(--primary); 
+            text-decoration: none; 
+            letter-spacing: 1px; 
+        }
 
-        nav ul { display: flex; list-style: none; gap: 25px; }
-        nav ul a { color: var(--text-dim); text-decoration: none; font-weight: 500; transition: 0.3s; font-size: 0.85rem; }
-        nav ul a:hover { color: var(--primary); }
+        nav ul { display: flex; list-style: none; gap: 25px; }
+        nav ul a { color: var(--text-dim); text-decoration: none; font-weight: 500; transition: 0.3s; font-size: 0.85rem; }
+        nav ul a:hover { color: var(--primary); }
 
-        /* Hero Section */
-        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-        .profile-container { position: relative; margin-bottom: 25px; }
-        .profile-img { width: 190px; height: 190px; border-radius: 50%; border: 2px solid var(--primary); padding: 5px; transition: 0.5s; object-fit: cover; }
-        
-        h1 { font-size: clamp(2.5rem, 8vw, 4.2rem); font-weight: 800; line-height: 1.1; margin-bottom: 10px; }
-        .gradient-text { background: linear-gradient(45deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        /* Hero Section */
+        .hero { 
+            height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center; 
+            padding-top: 60px;
+        }
 
-        .btn-group { display: flex; gap: 15px; margin-top: 35px; flex-wrap: wrap; justify-content: center; }
-        .btn { padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: 0.4s; display: flex; align-items: center; gap: 10px; font-size: 0.9rem; }
-        .btn-primary { background: var(--primary); color: #000; }
-        .btn-primary:hover { background: #fff; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0, 210, 255, 0.2); }
-        .btn-outline { border: 1px solid var(--glass-border); color: #fff; }
-        .btn-outline:hover { border-color: var(--primary); background: var(--glass); transform: translateY(-3px); }
+        .profile-container { position: relative; margin-bottom: 25px; }
+        .profile-img { 
+            width: 190px; 
+            height: 190px; 
+            border-radius: 50%; 
+            border: 3px solid var(--primary); 
+            padding: 5px; 
+            transition: 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            object-fit: cover; 
+            background: var(--bg-dark);
+        }
+        
+        .profile-container:hover .profile-img {
+            transform: scale(1.05) rotate(3deg);
+            box-shadow: 0 0 40px rgba(0, 210, 255, 0.3);
+        }
 
-        /* Sections */
-        section { padding: 100px 5%; max-width: 1100px; margin: auto; }
-        .section-title { font-size: 2.2rem; margin-bottom: 50px; text-align: center; font-weight: 700; }
+        h1 { font-size: clamp(2.5rem, 8vw, 4.2rem); font-weight: 800; line-height: 1.1; margin-bottom: 10px; }
+        .gradient-text { 
+            background: linear-gradient(45deg, var(--primary), var(--secondary)); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+        }
 
-        /* Event Card - Refined */
-        .event-card {
-            background: var(--glass); border: 1px solid var(--glass-border);
-            border-radius: 24px; display: grid; grid-template-columns: 1fr 1.2fr;
-            overflow: hidden; transition: 0.4s;
-        }
-        .event-img { width: 100%; height: 100%; object-fit: cover; max-height: 400px; filter: grayscale(20%); transition: 0.5s; }
-        .event-card:hover .event-img { filter: grayscale(0%); }
-        .event-content { padding: 40px; border-left: 1px solid var(--glass-border); }
-        .event-tag { color: var(--primary); border: 1px solid var(--primary); padding: 4px 12px; border-radius: 10px; font-size: 0.7rem; font-weight: 600; margin-bottom: 15px; display: inline-block; text-transform: uppercase; }
+        .btn-group { display: flex; gap: 15px; margin-top: 35px; flex-wrap: wrap; justify-content: center; }
+        .btn { 
+            padding: 12px 30px; 
+            border-radius: 50px; 
+            text-decoration: none; 
+            font-weight: 600; 
+            transition: 0.4s; 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+            font-size: 0.9rem; 
+        }
+        
+        .btn-primary { background: var(--primary); color: #000; }
+        .btn-primary:hover { background: #fff; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0, 210, 255, 0.2); }
+        
+        .btn-outline { border: 1px solid var(--glass-border); color: #fff; backdrop-filter: blur(5px); }
+        .btn-outline:hover { border-color: var(--primary); background: var(--glass); transform: translateY(-3px); }
 
-        /* Cards */
-        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .card { background: var(--glass); border: 1px solid var(--glass-border); padding: 35px; border-radius: 20px; transition: 0.3s; }
-        .card:hover { border-color: var(--primary); transform: translateY(-5px); }
-        .card i { font-size: 2rem; color: var(--primary); margin-bottom: 20px; display: block; }
+        /* Section Styling */
+        section { padding: 100px 5%; max-width: 1100px; margin: auto; }
+        .section-title { font-size: 2.2rem; margin-bottom: 50px; text-align: center; font-weight: 800; }
 
-        footer { padding: 60px 20px; text-align: center; border-top: 1px solid var(--glass-border); color: var(--text-dim); font-size: 0.9rem; }
+        /* Skills Card */
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { 
+            background: var(--glass); 
+            border: 1px solid var(--glass-border); 
+            padding: 40px; 
+            border-radius: 24px; 
+            transition: 0.4s; 
+            height: 100%;
+        }
+        .card:hover { border-color: var(--primary); transform: translateY(-10px); background: rgba(255,255,255,0.06); }
+        .card i { font-size: 2.2rem; color: var(--primary); margin-bottom: 25px; display: block; }
+        .card h3 { margin-bottom: 15px; font-weight: 700; }
+        .card p { color: var(--text-dim); font-size: 0.95rem; }
 
-        @media (max-width: 850px) {
-            .event-card { grid-template-columns: 1fr; }
-            .event-content { border-left: none; border-top: 1px solid var(--glass-border); }
-            header { width: 95%; }
-            nav ul { display: none; }
-        }
-    </style>
+        /* Event Showcase */
+        .event-card {
+            background: var(--glass); 
+            border: 1px solid var(--glass-border);
+            border-radius: 30px; 
+            display: grid; 
+            grid-template-columns: 1fr 1.2fr;
+            overflow: hidden; 
+            transition: 0.4s;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+        .event-img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            min-height: 350px;
+            filter: brightness(0.9);
+            transition: 0.5s;
+        }
+        .event-card:hover .event-img { filter: brightness(1.1); }
+        .event-content { padding: 50px; border-left: 1px solid var(--glass-border); display: flex; flex-direction: column; justify-content: center; }
+        .event-tag { 
+            color: var(--primary); 
+            border: 1px solid var(--primary); 
+            padding: 5px 15px; 
+            border-radius: 10px; 
+            font-size: 0.7rem; 
+            font-weight: 700; 
+            margin-bottom: 20px; 
+            display: inline-block; 
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Experience Highlight */
+        .experience-box {
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%);
+            border: 1px solid var(--glass-border);
+            padding: 40px;
+            border-radius: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        footer { 
+            padding: 80px 20px; 
+            text-align: center; 
+            border-top: 1px solid var(--glass-border); 
+            color: var(--text-dim); 
+            font-size: 0.9rem; 
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 850px) {
+            .event-card { grid-template-columns: 1fr; }
+            .event-content { border-left: none; border-top: 1px solid var(--glass-border); padding: 30px; }
+            h1 { font-size: 2.8rem; }
+            nav ul { display: none; }
+            header { width: 95%; padding: 10px 20px; }
+        }
+    </style>
 </head>
 <body>
 
-<div id="particles-js"></div>
+    <div id="particles-js"></div>
 
-<header>
-    <a href="#" class="logo">MSY.</a>
-    <nav>
-        <ul>
-            <li><a href="#hakkimda">Giriş</a></li>
-            <li><a href="#yetenekler">Teknik</a></li>
-            <li><a href="#etkinlik">Etkinlikler</a></li>
-            <li><a href="#deneyim">Kariyer</a></li>
-        </ul>
-    </nav>
-    <div style="display: flex; gap: 15px; align-items: center;">
-        <a href="https://www.linkedin.com/in/mehmet-sinan-ye%C5%9Filyurt-8971b821a/" target="_blank" style="color: var(--linkedin); font-size: 1.3rem;"><i class="fab fa-linkedin"></i></a>
-        <a href="mailto:mehmetsinanyesilyurt@gmail.com" class="btn btn-primary" style="padding: 8px 18px; font-size: 0.75rem;">İletişim</a>
-    </div>
-</header>
+    <header>
+        <a href="#" class="logo">MSY<span style="color:var(--secondary)">.</span></a>
+        <nav>
+            <ul>
+                <li><a href="#hakkimda">Giriş</a></li>
+                <li><a href="#yetenekler">Teknik</a></li>
+                <li><a href="#etkinlik">Etkinlikler</a></li>
+                <li><a href="#deneyim">Kariyer</a></li>
+            </ul>
+        </nav>
+        <div style="display: flex; gap: 15px; align-items: center;">
+            <a href="https://www.linkedin.com/in/mehmet-sinan-ye%C5%9Filyurt-8971b821a/" target="_blank" style="color: var(--linkedin); font-size: 1.4rem; transition: 0.3s;"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:mehmetsinanyesilyurt@gmail.com" class="btn btn-primary" style="padding: 8px 18px; font-size: 0.75rem;">Bana Ulaş</a>
+        </div>
+    </header>
 
-<main>
-    <section id="hakkimda" class="hero">
-        <div class="profile-container" data-aos="zoom-in">
-            <img src="1763670904995 (1).jpeg" alt="Mehmet Sinan" class="profile-img">
-        </div>
-        <h1 data-aos="fade-up">Mehmet Sinan <br><span class="gradient-text">Yeşilyurt</span></h1>
-        <p style="color: var(--text-dim); margin-top: 10px; font-size: 1.1rem;" data-aos="fade-up">
-            Akdeniz Üniversitesi YBS Öğrencisi & Stajyer
-        </p>
-        <div class="btn-group" data-aos="fade-up" data-aos-delay="200">
-            <a href="https://github.com/mehmetsinanyesilyurt" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
-            <a href="https://www.linkedin.com/in/mehmet-sinan-ye%C5%9Filyurt-8971b821a/" target="_blank" class="btn btn-outline"><i class="fab fa-linkedin"></i> LinkedIn</a>
-            <a href="#etkinlik" class="btn btn-primary">Projelerimi Gör</a>
-        </div>
-    </section>
+    <main>
+        <!-- Hero Section -->
+        <section id="hakkimda" class="hero">
+            <div class="profile-container" data-aos="zoom-in" data-aos-duration="1200">
+                <img src="1763670904995 (1).jpeg" alt="Mehmet Sinan Yeşilyurt" class="profile-img">
+            </div>
+            <h1 data-aos="fade-up">Mehmet Sinan <br><span class="gradient-text">Yeşilyurt</span></h1>
+            <p style="color: var(--text-dim); margin-top: 15px; font-size: 1.1rem; letter-spacing: 0.5px;" data-aos="fade-up" data-aos-delay="100">
+                Akdeniz Üniversitesi YBS Öğrencisi <br> 
+                <span style="color: #fff; font-weight: 600;">Sistem Operasyonları & Veri Yönetimi</span>
+            </p>
+            <div class="btn-group" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://github.com/mehmetsinanyesilyurt" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://www.linkedin.com/in/mehmet-sinan-ye%C5%9Filyurt-8971b821a/" target="_blank" class="btn btn-outline"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="#etkinlik" class="btn btn-primary">Projelerimi Gör</a>
+            </div>
+        </section>
 
-    <section id="yetenekler">
-        <h2 class="section-title" data-aos="fade-up">Teknik Yetkinlikler</h2>
-        <div class="card-grid">
-            <div class="card" data-aos="fade-up">
-                <i class="fas fa-database"></i>
-                <h3 style="margin-bottom: 10px;">Veritabanı Yönetimi</h3>
-                <p style="color: var(--text-dim); font-size: 0.95rem;">PostgreSQL ve MySQL sistemlerinde veri modelleme, yönetim ve optimizasyon süreçleri.</p>
-            </div>
-            <div class="card" data-aos="fade-up" data-aos-delay="100">
-                <i class="fas fa-code"></i>
-                <h3 style="margin-bottom: 10px;">Yazılım Geliştirme</h3>
-                <p style="color: var(--text-dim); font-size: 0.95rem;">Python ile otomasyon scriptleri ve veri işleme. Modern Web teknolojileri (HTML, CSS, React).</p>
-            </div>
-            <div class="card" data-aos="fade-up" data-aos-delay="200">
-                <i class="fas fa-terminal"></i>
-                <h3 style="margin-bottom: 10px;">Sistem Operasyonları</h3>
-                <p style="color: var(--text-dim); font-size: 0.95rem;">Altyapı izleme, sunucu yönetimi ve kurumsal sistem süreçlerinin takibi.</p>
-            </div>
-        </div>
-    </section>
+        <!-- Technical Skills -->
+        <section id="yetenekler">
+            <h2 class="section-title" data-aos="fade-up">Teknik Yetkinlikler</h2>
+            <div class="card-grid">
+                <div class="card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-database"></i>
+                    <h3>Veritabanı Yönetimi</h3>
+                    <p>PostgreSQL ve MySQL ekosistemlerinde veri modelleme, yönetim süreçleri ve query optimizasyonu üzerine çalışmalar.</p>
+                </div>
+                <div class="card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-terminal"></i>
+                    <h3>Sistem Operasyonları</h3>
+                    <p>Kurumsal altyapı izleme, sunucu yönetimi ve operasyonel süreçlerin otomasyonu konularında pratik deneyim.</p>
+                </div>
+                <div class="card" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-code"></i>
+                    <h3>Yazılım Geliştirme</h3>
+                    <p>Python ile veri işleme scriptleri. Frontend dünyasında modern UI pratikleri ve HTML/CSS/React yetkinliği.</p>
+                </div>
+            </div>
+        </section>
 
-    <section id="etkinlik">
-        <h2 class="section-title" data-aos="fade-up">Sosyal Sorumluluk & Eğitim</h2>
-        <div class="event-card" data-aos="fade-up">
-            <img src="k.jpeg" alt="Eğitim Etkinliği" class="event-img">
-            <div class="event-content">
-                <h3 style="font-size: 1.6rem; margin-bottom: 15px;">Dijital Çağda Robotlar ve Getirdikleri</h3>
-                <p style="color: var(--text-dim); font-size: 0.95rem; margin-bottom: 20px;">
-                    Akdeniz Üniversitesi Tazelenme Üniversitesi öğrencilerine yönelik robotik teknolojiler üzerine verdiğimiz bu eğitimle, dijital dünyanın fırsatlarını her yaştan katılımcıyla paylaştık.
-                </p>
-                <div style="font-size: 0.85rem; color: var(--primary); font-weight: 600;">
-                    #AkdenizÜniversitesi #DijitalFarkındalık #Robotik
-                </div>
-            </div>
-        </div>
-    </section>
+        <!-- Social Responsibility & Events -->
+        <section id="etkinlik">
+            <h2 class="section-title" data-aos="fade-up">Eğitim & Sosyal Sorumluluk</h2>
+            <div class="event-card" data-aos="fade-up">
+                <img src="k.jpeg" alt="Robotik Eğitimi" class="event-img">
+                <div class="event-content">
+                    <span class="event-tag">Eğitmen & Organizatör</span>
+                    <h3 style="font-size: 1.8rem; margin-bottom: 15px; color: var(--primary);">Dijital Çağda Robotlar ve Getirdikleri</h3>
+                    <p style="color: var(--text-dim); font-size: 1rem; margin-bottom: 25px;">
+                        Akdeniz Üniversitesi Tazelenme Üniversitesi bünyesinde, ileri yaştaki bireylerin dijital dünyayı anlamaları ve robotik teknolojilerin geleceğini keşfetmeleri için kapsamlı bir eğitim düzenledik.
+                    </p>
+                    <div style="font-size: 0.85rem; color: var(--secondary); font-weight: 600;">
+                        #AkdenizÜniversitesi #DijitalDönüşüm #ToplumsalFayda
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section id="deneyim">
-        <h2 class="section-title" data-aos="fade-up">Kariyer</h2>
-        <div class="card" style="display: flex; justify-content: space-between; align-items: center; border-left: 4px solid var(--primary);" data-aos="fade-left">
-            <div>
-                <h3 style="color: var(--primary);">VakıfBank</h3>
-                <p><b>Sistem Operasyonları Müdürlüğü — Stajyer</b></p>
-                <p style="font-size: 0.85rem; opacity: 0.6; margin-top: 5px;">Şubat 2026 – Günümüz</p>
-            </div>
-            <i class="fas fa-building" style="font-size: 2.5rem; opacity: 0.1;"></i>
-        </div>
-    </section>
-</main>
+        <!-- Career History -->
+        <section id="deneyim">
+            <h2 class="section-title" data-aos="fade-up">Kariyer</h2>
+            <div class="experience-box" data-aos="fade-left">
+                <div>
+                    <h3 style="color: var(--primary); font-size: 1.6rem;">VakıfBank</h3>
+                    <p style="font-weight: 600;">Sistem Operasyonları Müdürlüğü — Stajyer</p>
+                    <p style="font-size: 0.85rem; opacity: 0.6; margin-top: 5px;">Şubat 2026 – Günümüz</p>
+                </div>
+                <div style="text-align: right; opacity: 0.1;">
+                    <i class="fas fa-server" style="font-size: 4rem;"></i>
+                </div>
+            </div>
+        </section>
+    </main>
 
-<footer>
-    <p>Mehmet Sinan Yeşilyurt &copy; 2026</p>
-    <div style="margin-top: 15px; display: flex; justify-content: center; gap: 20px; font-size: 1.1rem;">
-        <a href="https://github.com/mehmetsinanyesilyurt" target="_blank" style="color: #fff;"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/mehmet-sinan-ye%C5%9Filyurt-8971b821a/" target="_blank" style="color: var(--linkedin);"><i class="fab fa-linkedin"></i></a>
-        <a href="mailto:mehmetsinanyesilyurt@gmail.com" style="color: var(--primary);"><i class="fas fa-envelope"></i></a>
-    </div>
-</footer>
+    <footer>
+        <p>Mehmet Sinan Yeşilyurt &copy; 2026 | Built with Outfit & Innovation</p>
+        <div style="margin-top: 25px; display: flex; justify-content: center; gap: 20px; font-size: 1.2rem;">
+            <a href="https://github.com/mehmetsinanyesilyurt" target="_blank" style="color: #fff;"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/mehmet-sinan-ye%C5%9Filyurt-8971b821a/" target="_blank" style="color: var(--linkedin);"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:mehmetsinanyesilyurt@gmail.com" style="color: var(--primary);"><i class="fas fa-envelope"></i></a>
+        </div>
+    </footer>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-<script>
-    AOS.init({ duration: 1000, once: true });
-    particlesJS("particles-js", {
-        "particles": {
-            "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
-            "color": { "value": "#00d2ff" },
-            "opacity": { "value": 0.2 },
-            "size": { "value": 2 },
-            "line_linked": { "enable": true, "distance": 150, "color": "#3a7bd5", "opacity": 0.1 },
-            "move": { "enable": true, "speed": 1.5 }
-        },
-        "interactivity": { "events": { "onhover": { "enable": true, "mode": "grab" } } }
-    });
-</script>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // AOS Animasyonları
+        AOS.init({ duration: 1000, once: true });
 
+        // Particles.js (Arkaplan parçacıkları)
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 90, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#00d2ff" },
+                "opacity": { "value": 0.2 },
+                "size": { "value": 2 },
+                "line_linked": { 
+                    "enable": true, 
+                    "distance": 150, 
+                    "color": "#3a7bd5", 
+                    "opacity": 0.1, 
+                    "width": 1 
+                },
+                "move": { "enable": true, "speed": 1.5 }
+            },
+            "interactivity": { 
+                "events": { "onhover": { "enable": true, "mode": "grab" } } 
+            }
+        });
+    </script>
 </body>
-</html> bu
+</html>
