@@ -1,335 +1,245 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mehmet Sinan Yeşilyurt</title>
 
-    <!-- Google Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <style>
-        :root {
-            --primary: #00d2ff; /* Modern Cyan */
-            --secondary: #3a7bd5; /* Deep Blue */
-            --linkedin: #0077b5;
-            --bg-dark: #050505;
-            --glass: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --text-main: #ffffff;
-            --text-dim: rgba(255, 255, 255, 0.6);
-        }
+<style>
+:root {
+    --primary:#00d2ff;
+    --secondary:#3a7bd5;
+    --linkedin:#0077b5;
+    --bg:#050505;
+    --glass:rgba(255,255,255,0.05);
+    --glass-border:rgba(255,255,255,0.12);
+    --text-dim:rgba(255,255,255,0.6);
+}
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; scroll-behavior: smooth; }
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Outfit',sans-serif;scroll-behavior:smooth;}
 
-        body { 
-            background-color: var(--bg-dark); 
-            color: var(--text-main); 
-            overflow-x: hidden; 
-            line-height: 1.6;
-        }
+body{
+    background:var(--bg);
+    color:white;
+    overflow-x:hidden;
+}
 
-        /* Particles Background */
-        #particles-js { 
-            position: fixed; 
-            width: 100%; 
-            height: 100%; 
-            z-index: -1; 
-            background: #050505; 
-        }
+section{padding:110px 6%;max-width:1100px;margin:auto;scroll-margin-top:120px;}
 
-        /* Glass Navigation */
-        header {
-            position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
-            width: 90%; max-width: 1100px; padding: 12px 30px;
-            background: rgba(10, 10, 10, 0.85); backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border); border-radius: 100px;
-            z-index: 1000; display: flex; justify-content: space-between; align-items: center;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-        }
+#particles-js{
+    position:fixed;width:100%;height:100%;z-index:-1;
+}
 
-        .logo { 
-            font-weight: 800; 
-            font-size: 1.4rem; 
-            color: var(--primary); 
-            text-decoration: none; 
-            letter-spacing: 1px; 
-        }
+/* HEADER */
+header{
+    position:fixed;top:20px;left:50%;transform:translateX(-50%);
+    width:90%;max-width:1100px;
+    padding:12px 30px;
+    background:rgba(10,10,10,0.85);
+    backdrop-filter:blur(18px);
+    border:1px solid var(--glass-border);
+    border-radius:100px;
+    display:flex;justify-content:space-between;align-items:center;
+    z-index:999;
+}
 
-        nav ul { display: flex; list-style: none; gap: 25px; }
-        nav ul a { color: var(--text-dim); text-decoration: none; font-weight: 500; transition: 0.3s; font-size: 0.85rem; }
-        nav ul a:hover { color: var(--primary); }
+.logo{
+    font-weight:800;font-size:1.4rem;color:var(--primary);text-decoration:none;
+}
 
-        /* Hero Section */
-        .hero { 
-            height: 100vh; 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: center; 
-            align-items: center; 
-            text-align: center; 
-            padding-top: 60px;
-        }
+nav ul{display:flex;list-style:none;gap:25px;}
+nav a{color:var(--text-dim);text-decoration:none;font-size:.85rem;font-weight:500;}
+nav a:hover{color:var(--primary);}
 
-        .profile-container { position: relative; margin-bottom: 25px; }
-        .profile-img { 
-            width: 190px; 
-            height: 190px; 
-            border-radius: 50%; 
-            border: 3px solid var(--primary); 
-            padding: 5px; 
-            transition: 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-            object-fit: cover; 
-            background: var(--bg-dark);
-        }
-        
-        .profile-container:hover .profile-img {
-            transform: scale(1.05) rotate(3deg);
-            box-shadow: 0 0 40px rgba(0, 210, 255, 0.3);
-        }
+/* HERO */
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
 
-        h1 { font-size: clamp(2.5rem, 8vw, 4.2rem); font-weight: 800; line-height: 1.1; margin-bottom: 10px; }
-        .gradient-text { 
-            background: linear-gradient(45deg, var(--primary), var(--secondary)); 
-            -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent; 
-        }
+.profile-img{
+    width:190px;height:190px;border-radius:50%;
+    border:3px solid var(--primary);
+    padding:5px;object-fit:cover;
+    transition:.6s;
+}
+.profile-img:hover{transform:scale(1.05) rotate(2deg);box-shadow:0 0 40px rgba(0,210,255,.4);}
 
-        .btn-group { display: flex; gap: 15px; margin-top: 35px; flex-wrap: wrap; justify-content: center; }
-        .btn { 
-            padding: 12px 30px; 
-            border-radius: 50px; 
-            text-decoration: none; 
-            font-weight: 600; 
-            transition: 0.4s; 
-            display: flex; 
-            align-items: center; 
-            gap: 10px; 
-            font-size: 0.9rem; 
-        }
-        
-        .btn-primary { background: var(--primary); color: #000; }
-        .btn-primary:hover { background: #fff; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0, 210, 255, 0.2); }
-        
-        .btn-outline { border: 1px solid var(--glass-border); color: #fff; backdrop-filter: blur(5px); }
-        .btn-outline:hover { border-color: var(--primary); background: var(--glass); transform: translateY(-3px); }
+h1{font-size:clamp(2.8rem,7vw,4.5rem);font-weight:800;}
+.gradient-text{
+    background:linear-gradient(45deg,var(--primary),var(--secondary));
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
 
-        /* Section Styling */
-        section { padding: 100px 5%; max-width: 1100px; margin: auto; }
-        .section-title { font-size: 2.2rem; margin-bottom: 50px; text-align: center; font-weight: 800; }
+.btn-group{display:flex;gap:15px;margin-top:30px;flex-wrap:wrap;justify-content:center;}
+.btn{
+    padding:12px 30px;border-radius:50px;text-decoration:none;font-weight:600;
+    display:flex;align-items:center;gap:10px;font-size:.9rem;
+    transition:.3s;
+}
+.btn-primary{background:var(--primary);color:black;}
+.btn-primary:hover{background:white;transform:translateY(-3px);}
+.btn-outline{border:1px solid var(--glass-border);color:white;background:var(--glass);}
+.btn-outline:hover{border-color:var(--primary);transform:translateY(-3px);}
 
-        /* Skills Card */
-        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .card { 
-            background: var(--glass); 
-            border: 1px solid var(--glass-border); 
-            padding: 40px; 
-            border-radius: 24px; 
-            transition: 0.4s; 
-            height: 100%;
-        }
-        .card:hover { border-color: var(--primary); transform: translateY(-10px); background: rgba(255,255,255,0.06); }
-        .card i { font-size: 2.2rem; color: var(--primary); margin-bottom: 25px; display: block; }
-        .card h3 { margin-bottom: 15px; font-weight: 700; }
-        .card p { color: var(--text-dim); font-size: 0.95rem; }
+/* CARDS */
+.section-title{text-align:center;font-size:2.2rem;font-weight:800;margin-bottom:50px;}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;}
+.card{
+    background:var(--glass);border:1px solid var(--glass-border);
+    padding:40px;border-radius:22px;transition:.4s;
+}
+.card:hover{transform:translateY(-8px);border-color:var(--primary);}
+.card i{font-size:2rem;color:var(--primary);margin-bottom:20px;}
 
-        /* Event Showcase */
-        .event-card {
-            background: var(--glass); 
-            border: 1px solid var(--glass-border);
-            border-radius: 30px; 
-            display: grid; 
-            grid-template-columns: 1fr 1.2fr;
-            overflow: hidden; 
-            transition: 0.4s;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-        }
-        .event-img { 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; 
-            min-height: 350px;
-            filter: brightness(0.9);
-            transition: 0.5s;
-        }
-        .event-card:hover .event-img { filter: brightness(1.1); }
-        .event-content { padding: 50px; border-left: 1px solid var(--glass-border); display: flex; flex-direction: column; justify-content: center; }
-        .event-tag { 
-            color: var(--primary); 
-            border: 1px solid var(--primary); 
-            padding: 5px 15px; 
-            border-radius: 10px; 
-            font-size: 0.7rem; 
-            font-weight: 700; 
-            margin-bottom: 20px; 
-            display: inline-block; 
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+/* EVENT */
+.event-card{
+    display:grid;grid-template-columns:1fr 1.2fr;
+    background:var(--glass);border:1px solid var(--glass-border);
+    border-radius:26px;overflow:hidden;
+}
+.event-img{width:100%;height:100%;object-fit:cover;}
+.event-content{padding:50px;border-left:1px solid var(--glass-border);}
 
-        /* Experience Highlight */
-        .experience-box {
-            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%);
-            border: 1px solid var(--glass-border);
-            padding: 40px;
-            border-radius: 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
+/* EXPERIENCE */
+.experience-box{
+    background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.01));
+    border:1px solid var(--glass-border);
+    padding:40px;border-radius:24px;
+    display:flex;justify-content:space-between;align-items:center;
+}
 
-        footer { 
-            padding: 80px 20px; 
-            text-align: center; 
-            border-top: 1px solid var(--glass-border); 
-            color: var(--text-dim); 
-            font-size: 0.9rem; 
-        }
+.vb-logo-box{
+    background:rgba(255,255,255,0.05);
+    padding:18px;
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+    border:1px solid var(--glass-border);
+}
 
-        /* Mobile Styles */
-        @media (max-width: 850px) {
-            .event-card { grid-template-columns: 1fr; }
-            .event-content { border-left: none; border-top: 1px solid var(--glass-border); padding: 30px; }
-            h1 { font-size: 2.8rem; }
-            nav ul { display: none; }
-            header { width: 95%; padding: 10px 20px; }
-        }
-    </style>
+.vb-logo{
+    width:120px;
+    filter:grayscale(100%) brightness(1.4);
+    transition:.4s;
+}
+
+.experience-box:hover .vb-logo{
+    filter:none;
+    transform:scale(1.05);
+}
+
+/* FOOTER */
+footer{text-align:center;padding:80px 20px;border-top:1px solid var(--glass-border);color:var(--text-dim);}
+
+/* MOBILE */
+@media(max-width:850px){
+    nav ul{display:none;}
+    .event-card{grid-template-columns:1fr;}
+    .event-content{border-left:none;border-top:1px solid var(--glass-border);}
+}
+</style>
 </head>
+
 <body>
 
-    <div id="particles-js"></div>
+<div id="particles-js"></div>
 
-    <header>
-        <a href="#" class="logo">MSY<span style="color:var(--secondary)">.</span></a>
-        <nav>
-            <ul>
-                <li><a href="#hakkimda">Giriş</a></li>
-                <li><a href="#yetenekler">Teknik</a></li>
-                <li><a href="#etkinlik">Etkinlikler</a></li>
-                <li><a href="#deneyim">Kariyer</a></li>
-            </ul>
-        </nav>
-        <div style="display: flex; gap: 15px; align-items: center;">
-            <a href="https://www.linkedin.com/in/mehmet-sinan-ye%C5%9Filyurt-8971b821a/" target="_blank" style="color: var(--linkedin); font-size: 1.4rem; transition: 0.3s;"><i class="fab fa-linkedin"></i></a>
-            <a href="mailto:mehmetsinanyesilyurt@gmail.com" class="btn btn-primary" style="padding: 8px 18px; font-size: 0.75rem;">Bana Ulaş</a>
-        </div>
-    </header>
+<header>
+<a class="logo">MSY.</a>
+<nav>
+<ul>
+<li><a href="#hakkimda">Giriş</a></li>
+<li><a href="#yetenekler">Teknik</a></li>
+<li><a href="#etkinlik">Etkinlik</a></li>
+<li><a href="#deneyim">Kariyer</a></li>
+</ul>
+</nav>
+<a href="mailto:mehmetsinanyesilyurt@gmail.com" class="btn btn-primary" style="padding:8px 18px;font-size:.75rem;">Bana Ulaş</a>
+</header>
 
-    <main>
-        <!-- Hero Section -->
-        <section id="hakkimda" class="hero">
-            <div class="profile-container" data-aos="zoom-in" data-aos-duration="1200">
-                <img src="profile.png" alt="Mehmet Sinan Yeşilyurt" class="profile-img">
-            </div>
-            <h1 data-aos="fade-up">Mehmet Sinan <br><span class="gradient-text">Yeşilyurt</span></h1>
-            <p style="color: var(--text-dim); margin-top: 15px; font-size: 1.1rem; letter-spacing: 0.5px;" data-aos="fade-up" data-aos-delay="100">
-                Akdeniz Üniversitesi YBS Öğrencisi <br> 
-                <span style="color: #fff; font-weight: 600;">Sistem Operasyonları & Veri Yönetimi</span>
-            </p>
-            <div class="btn-group" data-aos="fade-up" data-aos-delay="200">
-                <a href="https://github.com/mehmetsinanyesilyurt" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
-                <a href="https://www.linkedin.com/in/mehmet-sinan-ye%C5%9Filyurt-8971b821a/" target="_blank" class="btn btn-outline"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                <a href="#etkinlik" class="btn btn-primary">Projelerimi Gör</a>
-            </div>
-        </section>
+<!-- HERO -->
+<section id="hakkimda" class="hero">
+<img src="profile.png" class="profile-img" data-aos="zoom-in">
+<h1 data-aos="fade-up">Mehmet Sinan <span class="gradient-text">Yeşilyurt</span></h1>
+<p style="color:var(--text-dim);margin-top:15px;font-size:1.1rem;" data-aos="fade-up">
+Akdeniz Üniversitesi Yönetim Bilişim Sistemleri Öğrencisi <br>
+<b>Sistem Operasyonları & Veri Yönetimi</b>
+</p>
 
-        <!-- Technical Skills -->
-        <section id="yetenekler">
-            <h2 class="section-title" data-aos="fade-up">Teknik Yetkinlikler</h2>
-            <div class="card-grid">
-                <div class="card" data-aos="fade-up" data-aos-delay="100">
-                    <i class="fas fa-database"></i>
-                    <h3>Veritabanı Yönetimi</h3>
-                    <p>PostgreSQL ve MySQL ekosistemlerinde veri modelleme, yönetim süreçleri ve query optimizasyonu üzerine çalışmalar.</p>
-                </div>
-                <div class="card" data-aos="fade-up" data-aos-delay="200">
-                    <i class="fas fa-terminal"></i>
-                    <h3>Sistem Operasyonları</h3>
-                    <p>Kurumsal altyapı izleme, sunucu yönetimi ve operasyonel süreçlerin otomasyonu konularında pratik deneyim.</p>
-                </div>
-                <div class="card" data-aos="fade-up" data-aos-delay="300">
-                    <i class="fas fa-code"></i>
-                    <h3>Yazılım Geliştirme</h3>
-                    <p>Python ile veri işleme scriptleri. Frontend dünyasında modern UI pratikleri ve HTML/CSS/React yetkinliği.</p>
-                </div>
-            </div>
-        </section>
+<div class="btn-group" data-aos="fade-up">
+<a href="https://github.com/mehmetsinanyesilyurt" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
+<a href="https://www.linkedin.com/in/mehmet-sinan-ye%C5%9Filyurt-8971b821a/" class="btn btn-outline"><i class="fab fa-linkedin"></i> LinkedIn</a>
+</div>
+</section>
 
-        <!-- Social Responsibility & Events -->
-        <section id="etkinlik">
-            <h2 class="section-title" data-aos="fade-up">Eğitim & Sosyal Sorumluluk</h2>
-            <div class="event-card" data-aos="fade-up">
-                <img src="k.jpeg" alt="Robotik Eğitimi" class="event-img">
-                <div class="event-content">
-                    <span class="event-tag">Eğitmen & Organizatör</span>
-                    <h3 style="font-size: 1.8rem; margin-bottom: 15px; color: var(--primary);">Dijital Çağda Robotlar ve Getirdikleri</h3>
-                    <p style="color: var(--text-dim); font-size: 1rem; margin-bottom: 25px;">
-                        Akdeniz Üniversitesi Tazelenme Üniversitesi bünyesinde, ileri yaştaki bireylerin dijital dünyayı anlamaları ve robotik teknolojilerin geleceğini keşfetmeleri için kapsamlı bir eğitim düzenledik.
-                    </p>
-                    <div style="font-size: 0.85rem; color: var(--secondary); font-weight: 600;">
-                        #AkdenizÜniversitesi #DijitalDönüşüm #ToplumsalFayda
-                    </div>
-                </div>
-            </div>
-        </section>
+<!-- SKILLS -->
+<section id="yetenekler">
+<h2 class="section-title">Teknik Yetkinlikler</h2>
+<div class="card-grid">
+<div class="card"><i class="fas fa-database"></i><h3>Veritabanı Yönetimi</h3><p>PostgreSQL, MySQL veri modelleme ve optimizasyon.</p></div>
+<div class="card"><i class="fas fa-terminal"></i><h3>Sistem Operasyonları</h3><p>Kurumsal altyapı izleme, sunucu yönetimi ve otomasyon.</p></div>
+<div class="card"><i class="fas fa-code"></i><h3>Yazılım Geliştirme</h3><p>Python, HTML, CSS ve modern frontend UI pratikleri.</p></div>
+</div>
+</section>
 
-        <!-- Career History -->
-        <section id="deneyim">
-            <h2 class="section-title" data-aos="fade-up">Kariyer</h2>
-            <div class="experience-box" data-aos="fade-left">
-                <div>
-                    <h3 style="color: var(--primary); font-size: 1.6rem;">VakıfBank</h3>
-                    <p style="font-weight: 600;">Sistem Operasyonları Müdürlüğü — Stajyer</p>
-                    <p style="font-size: 0.85rem; opacity: 0.6; margin-top: 5px;">Şubat 2026 – Günümüz</p>
-                </div>
-                <div style="text-align: right; opacity: 0.1;">
-                    <i class="fas fa-server" style="font-size: 4rem;"></i>
-                </div>
-            </div>
-        </section>
-    </main>
+<!-- EVENT -->
+<section id="etkinlik">
+<h2 class="section-title">Eğitim & Sosyal Sorumluluk</h2>
+<div class="event-card">
+<img src="k.jpeg" class="event-img">
+<div class="event-content">
+<h3 style="color:var(--primary);font-size:1.8rem;">Dijital Çağda Robotlar</h3>
+<p style="color:var(--text-dim);margin-top:15px;">
+Akdeniz Üniversitesi Tazelenme Üniversitesi kapsamında ileri yaş bireyler için robotik ve dijital dönüşüm eğitimi verdim.
+</p>
+</div>
+</div>
+</section>
 
-    <footer>
-        <p>Mehmet Sinan Yeşilyurt &copy; 2026</p>
-        <div style="margin-top: 25px; display: flex; justify-content: center; gap: 20px; font-size: 1.2rem;">
-            <a href="https://github.com/mehmetsinanyesilyurt" target="_blank" style="color: #fff;"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/mehmet-sinan-ye%C5%9Filyurt-8971b821a/" target="_blank" style="color: var(--linkedin);"><i class="fab fa-linkedin"></i></a>
-            <a href="mailto:mehmetsinanyesilyurt@gmail.com" style="color: var(--primary);"><i class="fas fa-envelope"></i></a>
-        </div>
-    </footer>
+<!-- EXPERIENCE -->
+<section id="deneyim">
+<h2 class="section-title">Kariyer</h2>
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script>
-        // AOS Animasyonları
-        AOS.init({ duration: 1000, once: true });
+<div class="experience-box">
+<div>
+<h3 style="color:var(--primary);font-size:1.6rem;">VakıfBank</h3>
+<p><b>Systems Operations Intern</b></p>
+<p style="opacity:.6;font-size:.9rem;">Feb 2026 – Present</p>
+</div>
 
-        // Particles.js (Arkaplan parçacıkları)
-        particlesJS("particles-js", {
-            "particles": {
-                "number": { "value": 90, "density": { "enable": true, "value_area": 800 } },
-                "color": { "value": "#00d2ff" },
-                "opacity": { "value": 0.2 },
-                "size": { "value": 2 },
-                "line_linked": { 
-                    "enable": true, 
-                    "distance": 150, 
-                    "color": "#3a7bd5", 
-                    "opacity": 0.1, 
-                    "width": 1 
-                },
-                "move": { "enable": true, "speed": 1.5 }
-            },
-            "interactivity": { 
-                "events": { "onhover": { "enable": true, "mode": "grab" } } 
-            }
-        });
-    </script>
+<div class="vb-logo-box">
+<img src="vblogo.jpeg" class="vb-logo">
+</div>
+
+</div>
+</section>
+
+<footer>
+<p>Mehmet Sinan Yeşilyurt © 2026</p>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+<script>
+AOS.init({duration:1000,once:true});
+
+particlesJS("particles-js",{
+particles:{number:{value:90},color:{value:"#00d2ff"},
+size:{value:2},opacity:{value:.25},
+line_linked:{enable:true,distance:150,color:"#3a7bd5",opacity:.15,width:1},
+move:{enable:true,speed:1.5}},
+interactivity:{events:{onhover:{enable:true,mode:"grab"}}}
+});
+</script>
+
 </body>
 </html>
