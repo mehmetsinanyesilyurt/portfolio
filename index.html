@@ -96,6 +96,9 @@ h1{font-size:clamp(2.8rem,7vw,4.5rem);font-weight:800;}
 .card{
     background:var(--glass);border:1px solid var(--glass-border);
     padding:40px;border-radius:22px;transition:.4s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .card:hover{transform:translateY(-8px);border-color:var(--primary);}
 .card i{font-size:2rem;color:var(--primary);margin-bottom:20px;}
@@ -186,8 +189,8 @@ Akdeniz Üniversitesi Yönetim Bilişim Sistemleri Öğrencisi <br>
 </p>
 
 <div class="btn-group" data-aos="fade-up">
-<a href="https://github.com/mehmetsinanyesilyurt" class="btn btn-outline"><i class="fab fa-github"></i> GitHub</a>
-<a href="https://www.linkedin.com/in/mehmet-sinan-ye%C5%9Filyurt-8971b821a/" class="btn btn-outline"><i class="fab fa-linkedin"></i> LinkedIn</a>
+<a href="https://github.com/mehmetsinanyesilyurt" class="btn btn-outline" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+<a href="https://www.linkedin.com/in/mehmet-sinan-ye%C5%9Filyurt-8971b821a/" class="btn btn-outline" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
 </div>
 </section>
 
@@ -204,6 +207,22 @@ Akdeniz Üniversitesi Yönetim Bilişim Sistemleri Öğrencisi <br>
 <h2 class="section-title">Öne Çıkan Projeler</h2>
 <div class="card-grid">
     <div class="card" data-aos="fade-up">
+        <i class="fas fa-robot"></i>
+        <h3>Turkish Finance AI Agent</h3>
+        <p style="color:var(--text-dim); font-size:0.95rem;">
+            Finansal verileri analiz eden, döviz kurlarını ve borsa verilerini takip ederek kullanıcılara akıllı yatırım içgörüleri sunan Python tabanlı yapay zeka ajanı.
+        </p>
+        <div class="tag-container">
+            <span class="tag">Python</span>
+            <span class="tag">AI / LLM</span>
+            <span class="tag">Financial Analysis</span>
+        </div>
+        <a href="https://github.com/mehmetsinanyesilyurt/turkish-finance-ai-agent" target="_blank" class="btn btn-outline" style="margin-top:20px; padding:10px 20px; font-size:0.8rem; width: fit-content;">
+            <i class="fab fa-github"></i> Kaynak Kodu
+        </a>
+    </div>
+
+    <div class="card" data-aos="fade-up" data-aos-delay="100">
         <i class="fas fa-calendar-check"></i>
         <h3>Student Schedule Generator</h3>
         <p style="color:var(--text-dim); font-size:0.95rem;">
@@ -214,11 +233,11 @@ Akdeniz Üniversitesi Yönetim Bilişim Sistemleri Öğrencisi <br>
             <span class="tag">SQL Server</span>
             <span class="tag">Conflict Detection</span>
         </div>
-        <a href="https://github.com/mehmetsinanyesilyurt/student-schedule-generator" target="_blank" class="btn btn-outline" style="margin-top:20px; padding:10px 20px; font-size:0.8rem;">
+        <a href="https://github.com/mehmetsinanyesilyurt/student-schedule-generator" target="_blank" class="btn btn-outline" style="margin-top:20px; padding:10px 20px; font-size:0.8rem; width: fit-content;">
             <i class="fab fa-github"></i> Kaynak Kodu
         </a>
     </div>
-    </div>
+</div>
 </section>
 
 <section id="etkinlik">
@@ -241,7 +260,7 @@ Akdeniz Üniversitesi Tazelenme Üniversitesi kapsamında ileri yaş bireyler i�
 <div>
 <h3 style="color:var(--primary);font-size:1.6rem;">VakıfBank</h3>
 <p><b>Systems Operations Intern</b></p>
-<p style="opacity:.6;font-size:.9rem;">Feb 2026 – Present</p>
+<p style="opacity:.6;font-size:.9rem;">Şub 2026 – Günümüz</p>
 </div>
 
 <div class="vb-logo-box">
