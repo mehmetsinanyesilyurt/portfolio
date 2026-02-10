@@ -98,7 +98,6 @@ h1{font-size:clamp(2.8rem,7vw,4.5rem);font-weight:800;}
     padding:40px;border-radius:22px;transition:.4s;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 .card:hover{transform:translateY(-8px);border-color:var(--primary);}
 .card i{font-size:2rem;color:var(--primary);margin-bottom:20px;}
@@ -206,16 +205,19 @@ Akdeniz Üniversitesi Yönetim Bilişim Sistemleri Öğrencisi <br>
 <section id="projeler">
 <h2 class="section-title">Öne Çıkan Projeler</h2>
 <div class="card-grid">
+
     <div class="card" data-aos="fade-up">
-        <i class="fas fa-robot"></i>
-        <h3>Turkish Finance AI Agent</h3>
-        <p style="color:var(--text-dim); font-size:0.95rem;">
-            Finansal verileri analiz eden, döviz kurlarını ve borsa verilerini takip ederek kullanıcılara akıllı yatırım içgörüleri sunan Python tabanlı yapay zeka ajanı.
-        </p>
-        <div class="tag-container">
-            <span class="tag">Python</span>
-            <span class="tag">AI / LLM</span>
-            <span class="tag">Financial Analysis</span>
+        <div>
+            <i class="fas fa-robot"></i>
+            <h3>Turkish Finance AI Agent</h3>
+            <p style="color:var(--text-dim); font-size:0.95rem;">
+                Finansal verileri analiz eden, döviz kurlarını ve borsa verilerini takip ederek kullanıcılara akıllı yatırım içgörüleri sunan Python tabanlı yapay zeka ajanı.
+            </p>
+            <div class="tag-container">
+                <span class="tag">Python</span>
+                <span class="tag">AI / LLM</span>
+                <span class="tag">Finance</span>
+            </div>
         </div>
         <a href="https://github.com/mehmetsinanyesilyurt/turkish-finance-ai-agent" target="_blank" class="btn btn-outline" style="margin-top:20px; padding:10px 20px; font-size:0.8rem; width: fit-content;">
             <i class="fab fa-github"></i> Kaynak Kodu
@@ -223,20 +225,23 @@ Akdeniz Üniversitesi Yönetim Bilişim Sistemleri Öğrencisi <br>
     </div>
 
     <div class="card" data-aos="fade-up" data-aos-delay="100">
-        <i class="fas fa-calendar-check"></i>
-        <h3>Student Schedule Generator</h3>
-        <p style="color:var(--text-dim); font-size:0.95rem;">
-            Öğrenciler için geliştirilmiş, ders çakışmalarını tespit eden ve optimize edilmiş haftalık ders programı oluşturan C# tabanlı masaüstü uygulaması.
-        </p>
-        <div class="tag-container">
-            <span class="tag">C# / .NET</span>
-            <span class="tag">SQL Server</span>
-            <span class="tag">Conflict Detection</span>
+        <div>
+            <i class="fas fa-calendar-check"></i>
+            <h3>Student Schedule Generator</h3>
+            <p style="color:var(--text-dim); font-size:0.95rem;">
+                Öğrenciler için geliştirilmiş, ders çakışmalarını tespit eden ve optimize edilmiş haftalık ders programı oluşturan C# tabanlı masaüstü uygulaması.
+            </p>
+            <div class="tag-container">
+                <span class="tag">C# / .NET</span>
+                <span class="tag">SQL Server</span>
+                <span class="tag">Logic</span>
+            </div>
         </div>
         <a href="https://github.com/mehmetsinanyesilyurt/student-schedule-generator" target="_blank" class="btn btn-outline" style="margin-top:20px; padding:10px 20px; font-size:0.8rem; width: fit-content;">
             <i class="fab fa-github"></i> Kaynak Kodu
         </a>
     </div>
+
 </div>
 </section>
 
