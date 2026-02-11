@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mehmet Sinan Yeşilyurt</title>
+    <title>Mehmet Sinan Yeşilyurt | Portfolyo</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -80,7 +80,7 @@
         .btn-outline{border:1px solid var(--glass-border);color:white;background:var(--glass);}
         .btn-outline:hover{border-color:var(--primary);transform:translateY(-3px);}
 
-        /* PROJELER - FLEXBOX YAPISI */
+        /* PROJELER */
         .section-title{text-align:center;font-size:2.2rem;font-weight:800;margin-bottom:50px;}
         
         .projects-flex-container {
@@ -97,7 +97,7 @@
             padding: 35px;
             border-radius: 22px;
             transition: .4s;
-            flex: 1 1 340px; /* Minimum 340px genişlik, sığmazsa aşağı kayar */
+            flex: 1 1 340px;
             max-width: 520px;
             display: flex;
             flex-direction: column;
@@ -121,14 +121,24 @@
             border:1px solid rgba(0,210,255,0.2);
         }
 
-        /* EVENT */
+        /* EVENT KISMI DÜZELTİLDİ */
         .event-card{
-            display:grid;grid-template-columns:1fr 1.2fr;
-            background:var(--glass);border:1px solid var(--glass-border);
-            border-radius:26px;overflow:hidden;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 26px;
+            overflow: hidden;
+            min-height: 380px;
         }
-        .event-img{width:100%;height:100%;object-fit:cover;}
-        .event-content{padding:50px;border-left:1px solid var(--glass-border);}
+        .event-img{width:100%; height:100%; object-fit:cover; background:#111;}
+        .event-content{
+            padding:45px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-left: 1px solid var(--glass-border);
+        }
 
         /* EXPERIENCE */
         .experience-box{
@@ -149,8 +159,9 @@
         @media(max-width:850px){
             nav ul{display:none;}
             .event-card{grid-template-columns:1fr;}
-            .event-content{border-left:none;border-top:1px solid var(--glass-border);}
+            .event-content{border-left:none; border-top:1px solid var(--glass-border); padding:30px;}
             .project-card { flex: 1 1 100%; }
+            .experience-box { flex-direction: column; text-align: center; gap: 20px; }
         }
     </style>
 </head>
@@ -188,12 +199,11 @@
 <section id="projeler">
     <h2 class="section-title">Öne Çıkan Projeler</h2>
     <div class="projects-flex-container">
-        
         <div class="project-card" data-aos="fade-up">
             <div>
                 <i class="fas fa-robot"></i>
                 <h3>Turkish Finance AI Agent</h3>
-                <p>Finansal verileri analiz eden, döviz kurlarını ve borsa verilerini takip ederek kullanıcılara akıllı yatırım içgörüleri sunan Python tabanlı yapay zeka ajanı.</p>
+                <p>Finansal verileri analiz eden, borsa ve döviz kurlarını takip ederek akıllı yatırım içgörüleri sunan Python tabanlı yapay zeka ajanı.</p>
                 <div class="tag-container">
                     <span class="tag">Python</span>
                     <span class="tag">AI / LLM</span>
@@ -209,7 +219,7 @@
             <div>
                 <i class="fas fa-calendar-check"></i>
                 <h3>Student Schedule Generator</h3>
-                <p>Öğrenciler için geliştirilmiş, ders çakışmalarını tespit eden ve optimize edilmiş haftalık ders programı oluşturan C# tabanlı masaüstü uygulaması.</p>
+                <p>Ders çakışmalarını tespit eden ve optimize edilmiş haftalık programlar oluşturan C# tabanlı masaüstü uygulaması.</p>
                 <div class="tag-container">
                     <span class="tag">C# / .NET</span>
                     <span class="tag">SQL Server</span>
@@ -220,18 +230,17 @@
                 <i class="fab fa-github"></i> Kaynak Kodu
             </a>
         </div>
-
     </div>
 </section>
 
 <section id="etkinlik">
     <h2 class="section-title">Eğitim & Sosyal Sorumluluk</h2>
     <div class="event-card" data-aos="fade-up">
-        <img src="k.jpeg" alt="Dijital Çağda Robotlar Eğitimi" class="event-img">
+        <img src="k.jpeg" class="event-img" alt="Dijital Çağda Robotlar">
         <div class="event-content">
             <h3 style="color:var(--primary);font-size:1.8rem;margin-bottom:15px;">Dijital Çağda Robotlar ve Getirdikleri</h3>
-            <p style="color:var(--text-dim); line-height:1.8;">
-                Akdeniz Üniversitesi Tazelenme Üniversitesi bünyesinde, ileri yaş bireylerin dijital dünyaya adaptasyonunu sağlamak amacıyla <b>robotik teknolojiler ve dijital dönüşümün hayatımızdaki fırsatları</b> üzerine kapsamlı bir eğitim gerçekleştirdim.
+            <p style="color:var(--text-dim);line-height:1.8;font-size:1.05rem;">
+                Akdeniz Üniversitesi Tazelenme Üniversitesi öğrencilerine yönelik gerçekleştirdiğimiz bu eğitimde, robotik teknolojilerin hayatımıza kattığı fırsatları paylaşarak dijital dünyada farkındalık yaratmanın ve yaş almanın öğrenmeye engel olmadığını bir kez daha kanıtlamanın gururunu yaşadık.
             </p>
             <div class="tag-container" style="margin-top:20px;">
                 <span class="tag">#AkdenizÜniversitesi</span>
@@ -241,7 +250,7 @@
         </div>
     </div>
 </section>
-    
+
 <section id="deneyim">
     <h2 class="section-title">Kariyer</h2>
     <div class="experience-box" data-aos="fade-up">
